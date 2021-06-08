@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('https://www.educastudio.com/');
 });
+
+Route::prefix('products')->group(function () {
+    Route::get('/1', function () {
+        return redirect('https://www.educastudio.com/category/marbel-edu-games');
+    });
+    Route::get('/2', function () {
+        return redirect('https://www.educastudio.com/category/marbel-and-friends-kids-games');
+    });
+    Route::get('/3', function () {
+        return redirect('https://www.educastudio.com/category/riri-story-books');
+    });
+    Route::get('/4', function () {
+        return redirect('https://www.educastudio.com/category/kolak-kids-songs');
+    });
+});
