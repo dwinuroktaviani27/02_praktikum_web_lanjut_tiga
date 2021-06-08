@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\NewsController;
 // Route Home
 Route::get('/', [HomeController::class, 'index']);
 
-// Route Prefix
+// Route Prefix Halaman Products
 Route::prefix('products')->group(function () {
     Route::get('/1', [ProductsController::class, 'p1']);
     Route::get('/2', [ProductsController::class, 'p2']);
@@ -28,5 +29,14 @@ Route::prefix('products')->group(function () {
 
 // Route Param
 Route::get('/news/{id}', [NewsController::class, 'index']);
+
+// Route Prefix Halaman Program
+Route::prefix('program')->group(function () {
+    Route::get('/1', [ProgramsController::class, 'program1']);
+    Route::get('/2', [ProgramsController::class, 'program2']);
+    Route::get('/3', [ProgramsController::class, 'program3']);
+});
+
+
 
 
