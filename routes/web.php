@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,6 @@ Route::prefix('products')->group(function () {
 });
 
 // Route Param
-Route::get('/user/{id}', function ($id) {
-    return redirect('https://www.educastudio.com/category/kolak-kids-songs');
-});
+Route::get('/news/{id}', [NewsController::class, 'index']);
 
 
