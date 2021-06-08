@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route Home
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/', function () {
     return redirect('https://www.educastudio.com/');
 });
 
+// Route Prefix
 Route::prefix('products')->group(function () {
     Route::get('/1', function () {
         return redirect('https://www.educastudio.com/category/marbel-edu-games');
@@ -31,3 +35,10 @@ Route::prefix('products')->group(function () {
         return redirect('https://www.educastudio.com/category/kolak-kids-songs');
     });
 });
+
+// Route Param
+Route::get('/user/{id}', function ($id) {
+    return redirect('https://www.educastudio.com/category/kolak-kids-songs');
+});
+
+
