@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,24 +17,12 @@ use App\Http\Controllers\HomeController;
 // Route Home
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return redirect('https://www.educastudio.com/');
-});
-
 // Route Prefix
 Route::prefix('products')->group(function () {
-    Route::get('/1', function () {
-        return redirect('https://www.educastudio.com/category/marbel-edu-games');
-    });
-    Route::get('/2', function () {
-        return redirect('https://www.educastudio.com/category/marbel-and-friends-kids-games');
-    });
-    Route::get('/3', function () {
-        return redirect('https://www.educastudio.com/category/riri-story-books');
-    });
-    Route::get('/4', function () {
-        return redirect('https://www.educastudio.com/category/kolak-kids-songs');
-    });
+    Route::get('/1', [ProductsController::class, 'p1']);
+    Route::get('/2', [ProductsController::class, 'p2']);
+    Route::get('/3', [ProductsController::class, 'p3']);
+    Route::get('/4', [ProductsController::class, 'p4']);
 });
 
 // Route Param
