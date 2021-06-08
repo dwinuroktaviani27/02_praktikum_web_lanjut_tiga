@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramsController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,11 @@ Route::prefix('program')->group(function () {
 Route::get('/about ', function () {
     return redirect('https://www.educastudio.com/about-us');
 });
+
+// Route Resource Only
+Route::resource('contact', ContactsController::class)->only([
+    'index'
+]);
 
 
 
