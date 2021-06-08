@@ -37,6 +37,11 @@ Route::prefix('program')->group(function () {
     Route::get('/3', [ProgramsController::class, 'program3']);
 });
 
+// Halaman About Us dengan Route Biasa
+Route::get('/about ', function () {
+    return redirect('https://www.educastudio.com/about-us');
+});
+
 
 
 
